@@ -22,13 +22,11 @@ async function sad(){
     <p>${quote}</p>
     `;
 }
-async function getQuote(){
-    try{
-        const response = await fetch(
-        "https://api.allorigins.win/get?url=" + encodeURIComponent("https://zenquotes.io/api/random")
-        );
+async function getQuote() {
+    try {
+        const response = await fetch("https://api.quotable.io/random");
         const data = await response.json();
-        return data[0].q + " - " + data[0].a;
+        return data.content + " - " + data.author;
     } catch (error) {
         console.log("Error fetching quote:", error);
         return "Stay positive!";
