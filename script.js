@@ -24,8 +24,9 @@ async function sad(){
 }
 async function getQuote() {
     const proxy = "https://api.allorigins.win/raw?url=";
-    const url = proxy + encodeURIComponent("https://zenquotes.io/api/random");
-    const response = await fetch(url);
+    const apiUrl = "https://zenquotes.io/api/random?t=" + Date.now();
+    const url = proxy + encodeURIComponent(apiUrl);
+    const response = await fetch(url, { cache: "no-store" });
     const data = await response.json();
     return `${data[0].q} — ${data[0].a}`;
 }
