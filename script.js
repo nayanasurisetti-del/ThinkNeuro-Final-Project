@@ -22,8 +22,14 @@ async function sad(){
     <p>${quote}</p>
     `;
 }
+let quotesCache = null;
+
 async function getQuote() {
-    const response = await fetch("https://api.quotable.io/random");
-    const data = await response.json();
-    return `${data.content} — ${data.author}`;
+    if (!quotesCache) {
+        const response = await fetch("https://type.fit/api/quotes");
+        quotesCache = await response.json();
+    }
+    const randomIndex = Math.floor(Math.random() * quotesCache.length);
+    const quote = quotesCache[randomIndex];
+    return `${quote.text} — ${quote.author || "Unknown"}`;
 }
