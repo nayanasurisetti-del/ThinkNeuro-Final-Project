@@ -5,14 +5,14 @@ const happyActivities = [
     "Dance for 5 minutes",
     "Write down 3 things you're grateful for"
 ];
-const stressedActivites = [
+const stressedActivities = [
     "Take 5 deep breaths",
     "Stretch your body",
     "Drink some water",
     "Take a short break from screens",
     "Go outside for fresh air"
 ];
-const sadActivties = [
+const sadActivities = [
     "Watch a comfort show",
     "Write your feelings in a journal",
     "Give yourself a break",
@@ -26,6 +26,7 @@ async function happy(){
     display.innerHTML = `
     <h3>😊 You selected happy!</h3>
     <p>${quote}</p>
+    <p><strong>Try this activity:</strong> ${activity}</p>
     `;
 }
 async function stressed(){
@@ -56,7 +57,7 @@ async function getQuote() {
     const data = await response.json();
     return `${data[0].q} — ${data[0].a}`;
 }
-function getRandomActivity(activties){
+function getRandomActivity(activities){
     const randIndex = Math.floor(Math.random() * activities.length);
     return activities[randIndex];
 }
