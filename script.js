@@ -1,27 +1,13 @@
-async function happy(){
-    const quote = await getQuote();
-    const display = document.getElementById("moodDisplay");
-    display.innerHTML = `
-    <h3>😊 You selected happy!</h3>
-    <p>${quote}</p>
-    `;
+function happy(){
+    console.log("happy");
 }
-async function stressed(){
-    const quote = await getQuote();
-    const display = document.getElementById("moodDisplay");
-    display.innerHTML = `
-    <h3>😟 You selected stressed</h3>
-    <p>${quote}</p>
-    `;
+function stressed(){
+    console.log("Stressed");
 }
-async function sad(){
-    const quote = await getQuote();
-    const display = document.getElementById("moodDisplay");
-    display.innerHTML = `
-    <h3>🥺 You selected sad</h3>
-    <p>${quote}</p>
-    `;
+function sad(){
+    console.log("sad");
 }
+
 async function getQuote() {
     const proxy = "https://api.allorigins.win/raw?url=";
     const url = proxy + encodeURIComponent("https://zenquotes.io/api/random");
