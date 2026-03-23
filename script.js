@@ -23,7 +23,7 @@ async function sad(){
     `;
 }
 async function getQuote() {
-    const quote = await fetch("https://zenquotes.io/api/random");
-    const data = await quote.json();
-    return `${data[0].q} — ${data[0].a}`;
+    const response = await fetch("https://api.quotable.io/random");
+    const data = await response.json();
+    return `${data.content} — ${data.author}`;
 }
