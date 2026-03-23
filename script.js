@@ -22,14 +22,10 @@ async function sad(){
     <p>${quote}</p>
     `;
 }
-let quotesCache = null;
-
 async function getQuote() {
-    if (!quotesCache) {
-        const response = await fetch("https://type.fit/api/quotes");
-        quotesCache = await response.json();
-    }
-    const randomIndex = Math.floor(Math.random() * quotesCache.length);
-    const quote = quotesCache[randomIndex];
-    return `${quote.text} — ${quote.author || "Unknown"}`;
+    const proxy = "https://api.allorigins.win/raw?url=";
+    const url = proxy + encodeURIComponent("https://zenquotes.io/api/random");
+    const response = await fetch(url);
+    const data = await response.json();
+    return `${data[0].q} — ${data[0].a}`;
 }
