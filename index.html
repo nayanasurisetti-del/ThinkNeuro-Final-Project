@@ -1,15 +1,100 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Mind Check</title>
-    </head>
-    <body>
-        <h1>Mind Check</h1>
-        <p>How's your mood right now?</p>
-        <button onclick="happy()">Happy</button>
-        <button onclick="stressed()">Stressed</button>
-        <button onclick="sad()">Sad</button>
-        <div id="moodDisplay"></div>
-    </body>
+
+<head>
+    <title>Mind Check</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fceaff, #e0f7ff, #fef6d8);
+        }
+
+        .screen {
+            display: none;
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 320px;
+        }
+
+        h1, p {
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 18px;
+            margin: 8px;
+            border: none;
+            border-radius: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .happy { background-color: #ffe0f0; }
+        .stressed { background-color: #fff4cc; }
+        .sad { background-color: #d6f5f5; }
+        .start { background-color: #dcd6ff; }
+
+        button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        #moodDisplay {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HOME SCREEN -->
+    <div id="homeScreen" class="screen active">
+        <div class="card">
+            <h1>🌸 Mind Check 🌸</h1>
+            <p>Take a moment to check in with yourself</p>
+            <button class="start" onclick="startApp()">Start</button>
+        </div>
+    </div>
+
+    <!-- MAIN SCREEN -->
+    <div id="mainScreen" class="screen">
+        <div class="card">
+            <h1>How are you feeling?</h1>
+
+            <button class="happy" onclick="happy()">😊 Happy</button>
+            <button class="stressed" onclick="stressed()">😟 Stressed</button>
+            <button class="sad" onclick="sad()">🥺 Sad</button>
+
+            <div id="moodDisplay"></div>
+        </div>
+    </div>
+
+    <!-- JS FILE -->
     <script src="script.js"></script>
+
+</body>
 </html>

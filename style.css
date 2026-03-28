@@ -1,0 +1,82 @@
+#mainScreen {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+body {
+    background: linear-gradient(to bottom right, #f7f4ff, #e6f0ff);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #f7f4ff, #e6f0ff);
+}
+
+/* Shared screen layout */
+.screen {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    display: flex;
+}
+
+/* Card container */
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+}
+
+/* Titles */
+h1 {
+    color: #6a5acd;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+}
+
+/* Buttons */
+button {
+    padding: 12px 18px;
+    margin: 8px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.happy { background-color: #ffe0f0; }
+.stressed { background-color: #fff4cc; }
+.sad { background-color: #d6f5f5; }
+.start { background-color: #dcd6ff; }
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+#moodDisplay {
+    margin-top: 20px;
+}
+.screen {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
