@@ -89,8 +89,8 @@ let lastQuote = null;
 async function getQuote() {
     if (lastQuote) return lastQuote;
 
-    const apiUrl = "https://zenquotes.io/api/random?t=" + Date.now();
-    const proxy = "https://cors.bridged.cc/";
+    const proxy = "https://api.allorigins.win/raw?url=";
+    const apiUrl = encodeURIComponent("https://zenquotes.io/api/random");
     const url = proxy + apiUrl;
 
     try {
@@ -111,7 +111,7 @@ async function getQuote() {
 
         return lastQuote;
     } catch (err) {
-        return "Keep going — you’re doing great!";
+        return "Stay Positive!";
     }
 }
 
